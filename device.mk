@@ -28,10 +28,6 @@ $(call inherit-product-if-exists, vendor/Vodafone/VFD600/VFD600-vendor.mk)
  PRODUCT_COPY_FILES += \
      $(call find-copy-subdir-files,*,${LOCAL_PATH}/ramdisk,root)
 
-# Prebuilt
-PRODUCT_COPY_FILES += \
-     $(call find-copy-subdir-files,*,${LOCAL_PATH}/prebuilt/system,system)
-
 DEVICE_PACKAGE_OVERLAYS := \
     $(LOCAL_PATH)/overlay
 
