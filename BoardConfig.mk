@@ -17,7 +17,5 @@ include device/Vodafone/msm8909-common/BoardConfigCommon.mk
 
 include device/Vodafone/VFD600/board/*.mk
 
-TARGET_BOARD_INFO_FILE := device/Vodafone/VFD600/board-info.txt
-
 # inherit from proprietary files
 -include vendor/Vodafone/VFD600/BoardConfigVendor.mk
