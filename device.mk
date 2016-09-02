@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2014-2016 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,26 +14,13 @@
 # limitations under the License.
 #
 
-# This file includes all definitions that apply to ALL condor devices, and
-# are also specific to condor devices
-#
-# Everything in this directory will become public
-
-LOCAL_PATH := device/Vodafone/VFD600
-
-# device specific vendor blobs
-$(call inherit-product-if-exists, vendor/Vodafone/VFD600/VFD600-vendor.mk)
-
-# Ramdisk
- PRODUCT_COPY_FILES += \
-     $(call find-copy-subdir-files,*,${LOCAL_PATH}/ramdisk,root)
-
-DEVICE_PACKAGE_OVERLAYS := \
-    $(LOCAL_PATH)/overlay
-
-# Inherit from msm8610-common
+# Inherit from msm8909-common
 $(call inherit-product, device/Vodafone/msm8909-common/msm8909.mk)
 
-# Doze
-PRODUCT_PACKAGES += \
-    VFDDoze
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
+# Include package config fragments
+include $(LOCAL_PATH)/product/*.mk
+
+$(call inherit-product-if-exists, vendor/Vodafone/VFD600/VFD600-vendor.mk)

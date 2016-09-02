@@ -1,6 +1,2 @@
 [
-  {
-    "repository":  "android_device_Vodafone_msm8909-common",
-    "target_path": "device/Vodafone/msm8909-common"
-  }
 ]
